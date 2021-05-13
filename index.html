@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Save My Child
+    </title>
+    <link rel="icon" href="https://img.icons8.com/ios/452/save-the-children.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="description" content="make qr code with your info. to get your child">
+    <meta name="keywords" content="child,children,parents">
+    <meta name="author" content="Mohamed Sameh">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .data,
+        #qrimage,
+        #generate {
+            display: block;
+            margin: auto;
+        }
+
+        #save {
+            display: none;
+            margin: auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="" id="qrimage" />
+    </div>
+    <div>
+        <input type="text" size="60" maxlength="60" class="data" id="childname" placeholder="Enter Child's Name" />
+        <input type="text" size="60" maxlength="60" class="data" id="parentname" placeholder="Enter Parent's Name" />
+        <input type="number" size="60" maxlength="60" class="data" id="parentnumber"
+            placeholder="Enter Parent's Phone Number" />
+        <input type="text" size="60" maxlength="100" class="data" id="fbLink"
+            placeholder="Enter Parent's Facebook Link" />
+        <input type="text" size="60" class="data" id="comment" placeholder="Enter Your Comment" />
+    </div>
+    <div><button type="button" id="generate">
+            Generate
+        </button>
+        <a href="" download id="link">
+            <button type="button" id="save">
+                Download Code
+            </button>
+        </a>
+    </div>
+    <script>
+        var qr = document.getElementById("qrimage")
+        var generatorButton = document.getElementById("generate")
+        var newqr = document.createElement("img")
+        var saveButton = document.getElementById("save")
+        var linkButton = document.getElementById("link")
+        generatorButton.addEventListener("click", generator)
+        var finalURL
+
+        function generator() {
+            finalURL =
+                'https://chart.googleapis.com/chart?cht=qr&chl= Child Name= ' +
+                document.getElementById("childname").value + ' Parent Name = ' +
+                document.getElementById("parentname").value + ' Parent Phone Number = ' +
+                document.getElementById("parentnumber").value + ' Parent Facebook Link = ' +
+                document.getElementById("fbLink").value + ' Parent Comment = ' +
+                document.getElementById("comment").value +
+                '&chs=320x320&chld=L|0'
+            newqr.src = finalURL
+            newqr.id = "qrimage"
+            qr.parentNode.replaceChild(newqr, qr)
+            saveButton.style.display = "block"
+            link.href = finalURL
+        }
+    </script>
+</body>
+
+</html>
