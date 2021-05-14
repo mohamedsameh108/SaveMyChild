@@ -138,9 +138,9 @@
                 document.getElementById("fbLink").value + ' Parent Comment = ' +
                 document.getElementById("comment").value +
                 '&chs=320x320&chld=L|0'
-            newqr.src = finalURL
+            qr.src = finalURL
             
-            qr.parentNode.replaceChild(newqr, qr)
+            
             saveButton.style.display = "block"
             link.href = finalURL
         }
