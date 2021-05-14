@@ -123,7 +123,6 @@
     <script>
         var qr = document.getElementById("qrimage")
         var generatorButton = document.getElementById("generate")
-        var newqr = document.createElement("img")
         var saveButton = document.getElementById("save")
         var linkButton = document.getElementById("link")
         generatorButton.addEventListener("click", generator)
@@ -139,8 +138,6 @@
                 document.getElementById("comment").value +
                 '&chs=320x320&chld=L|0'
             qr.src = finalURL
-            
-            
             saveButton.style.display = "block"
             link.href = finalURL
         }
