@@ -11,7 +11,13 @@
     <meta name="keywords" content="child,children,parents">
     <meta name="author" content="Mohamed Sameh">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        .inputs {
+            margin: 5px;
+            padding: 5px;
+        }
+
         .data,
         #qrimage,
         #generate {
@@ -24,8 +30,48 @@
             margin: auto;
         }
 
-        a {
+        #link {
             text-decoration: none;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: gainsboro;
+            color: black;
+            text-align: center;
+            font-size: large;
+        }
+
+        .fa {
+            padding: 10px;
+            font-size: 15px;
+            width: 15px;
+            text-align: center;
+            text-decoration: none;
+            margin: 2.5px 1px;
+            border-radius: 50%;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+        .fa-github {
+            background: gray;
+            color: white;
         }
     </style>
 </head>
@@ -35,22 +81,34 @@
         <img src="" id="qrimage" />
     </div>
     <div>
-        <input type="text" size="60" maxlength="60" class="data" id="childname" placeholder="Enter Child's Name" />
-        <input type="text" size="60" maxlength="60" class="data" id="parentname" placeholder="Enter Parent's Name" />
-        <input type="number" size="60" maxlength="60" class="data" id="parentnumber"
-            placeholder="Enter Parent's Phone Number" />
-        <input type="text" size="60" maxlength="100" class="data" id="fbLink"
-            placeholder="Enter Parent's Facebook Link" />
-        <input type="text" size="60" class="data" id="comment" placeholder="Enter Your Comment" />
+        <div class="inputs">
+            <input type="text" size="60" maxlength="60" class="data" id="childname" placeholder="Enter Child's Name" />
+        </div>
+        <div class="inputs"><input type="text" size="60" maxlength="60" class="data" id="parentname"
+                placeholder="Enter Parent's Name" /></div>
+        <div class="inputs"><input type="number" size="60" maxlength="60" class="data" id="parentnumber"
+                placeholder="Enter Parent's Phone Number" /> </div>
+        <div class="inputs"><input type="text" size="60" maxlength="100" class="data" id="fbLink"
+                placeholder="Enter Parent's Facebook Link" /> </div>
+        <div class="inputs"><input type="text" size="60" class="data" id="comment" placeholder="Enter Your Comment" />
+        </div>
     </div>
     <div><button type="button" id="generate">
             Generate
         </button>
-        <a href="" download id="link">
+        <a href="" download target="_blank" id="link">
             <button type="button" id="save">
                 Download Code
             </button>
         </a>
+    </div>
+    <div class="footer">
+        <p>Contact with the developer
+        </p>
+        <a href="https://facebook.com/m7mds2me7/" target="_blank" class="fa fa-facebook"></a>
+        <a href="https://linkedin.com/in/mohamedsameh18/" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://github.com/mohamedsameh108/" target="_blank" class="fa fa-github"></a>
+
     </div>
     <script>
         var qr = document.getElementById("qrimage")
