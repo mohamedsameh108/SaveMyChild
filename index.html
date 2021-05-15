@@ -14,12 +14,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .inputs {
+        .data {
             margin: 5px;
             padding: 5px;
+            display: block;
         }
 
-        .data,
         #qrimage,
         #generate {
             display: block;
@@ -87,17 +87,14 @@
         <img src="" id="qrimage" />
     </div>
     <div>
-        <div class="inputs">
-            <input type="text" size="60" maxlength="60" class="data" id="childname" placeholder="Enter Child's Name" />
-        </div>
-        <div class="inputs"><input type="text" size="60" maxlength="60" class="data" id="parentname"
-                placeholder="Enter Parent's Name" /></div>
-        <div class="inputs"><input type="number" size="60" maxlength="60" class="data" id="parentnumber"
-                placeholder="Enter Parent's Phone Number" /> </div>
-        <div class="inputs"><input type="text" size="60" maxlength="100" class="data" id="fbLink"
-                placeholder="Enter Parent's Facebook Link" /> </div>
-        <div class="inputs"><input type="text" size="60" class="data" id="comment" placeholder="Enter Your Comment" />
-        </div>
+        <input type="text" size="60" maxlength="60" class="data" id="childname" placeholder="Enter Child's Name" />
+        <input type="text" size="60" maxlength="60" class="data" id="parentname"
+            placeholder="Enter Parent's Name" />
+        <input type="number" size="60" maxlength="60" class="data" id="parentnumber"
+            placeholder="Enter Parent's Phone Number" />
+        <input type="text" size="60" maxlength="100" class="data" id="fbLink"
+            placeholder="Enter Parent's Facebook Link" />
+        <input type="text" size="60" class="data" id="comment" placeholder="Enter Your Comment" />
     </div>
     <div><button type="button" id="generate">
             Generate
